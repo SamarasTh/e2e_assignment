@@ -7,10 +7,10 @@ This application was generated using JHipster, you can find documentation and he
 To install and run the application an active internet connection is required. 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1: JDK 1.8. Download and install any version of the jdk1.8. It is recommended to install it in folder whose path does not contain spaces.
+1: JDK 1.8. Download and install any version of the JDK 1.8. It is best to install it in folder whose path does not contain spaces.
 Make sure to also set the environmental variable JAVA_HOME in your system. The variable must point to your JDK folder (absolute path). The path of the jdk folder should also be prepended to the PATH system variable.
 
-2: Maven Version 3.x. Download and install any version of Maven 3. It is recommended to install it in folder whose path does not contain spaces.
+2: Maven Version 3.x. Download and install any version of Maven 3. It is best to install it in folder whose path does not contain spaces.
 Make sure to also set the environmental variables M2_HOME and M2 in your system. The M2_HOME variable must point to the maven folder (absolute path) The M2 variable must point to the bin folder under the maven folder (absolute path). The path of the maven folder should also be prepended to the PATH system variable.
 
 3: Git (Optional) You need to install the Git commandline client to download the sources of the application.
@@ -63,7 +63,7 @@ The code has a deliberate error. Although the search functionality should take "
 
 Change the search functionality to also take the users "Email" into account when searching. If the email matches the searched text then the user should be presented on the GUI.
 
-### Excercise 3(20 points)
+### Excercise 3 (20 points)
 
 Implement a new button on the GUI called "Clear". By clicking this button the entered text in the searchfield should be deleted. If the results table contains any results then they should be removed from the GUI. It is not an acceptable solution to refresh the page after clicking this button.
 
