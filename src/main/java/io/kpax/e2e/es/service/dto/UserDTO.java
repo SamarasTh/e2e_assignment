@@ -1,15 +1,17 @@
 package io.kpax.e2e.es.service.dto;
 
-import io.kpax.e2e.es.config.Constants;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-import io.kpax.e2e.es.domain.Authority;
-import io.kpax.e2e.es.domain.User;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
-import javax.validation.constraints.*;
-import java.util.Set;
-import java.util.stream.Collectors;
+import io.kpax.e2e.es.config.Constants;
+import io.kpax.e2e.es.domain.Authority;
+import io.kpax.e2e.es.domain.User;
 /**
  * A DTO representing a user, with his authorities.
  */

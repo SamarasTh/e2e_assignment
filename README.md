@@ -2,86 +2,75 @@
 
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
-## Development
+## Installation
 
+To install and run the application an active internet connection is required. 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1. [Node.js][]: We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+1. JDK 1.8. Download and install any version of the jdk1.8. It is recommended to install it in folder whose path does not contain spaces.
+Make sure to also set the environmental variable JAVA_HOME in your system. The variable must point to your JDK folder (absolute path). The path of the jdk folder should also be prepended to the PATH system variable.
 
-After installing Node, you should be able to run the following command to install development tools (like
-[Bower][] and [BrowserSync][]). You will only need to run this command when dependencies change in package.json.
+2. Maven Version 3.x. Download and install any version of Maven 3. It is recommended to install it in folder whose path does not contain spaces.
+Make sure to also set the environmental variables M2_HOME and M2 in your system. The M2_HOME variable must point to the maven folder (absolute path) The M2 variable must point to the bin folder under the maven folder (absolute path). The path of the maven folder should also be prepended to the PATH system variable.
+
+3 (Optional) Git. You need to install the Git commandline client to download the sources of the application.
+
+4. Download the sources of the application. If you installed Git client in the previous step, then navigate with the commandline to a folder in which you want to download the source code. Run the following command.
+
+git clone https://bitbucket.org/kperp/e2e.git
+
+Alternatively you can download the zip from
+
+https://bitbucket.org/kperp/e2e/get/b82d43df0ffb.zip
+
+5 (Optional). [Node.js][]: Node.js is used to run a development web server and build the project. Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+
+6 (Optional). After installing Node, you should be able to run the following command to install development tools (like [Bower][] and [BrowserSync][]). You will only need to run this command when dependencies change in package.json.
 
     npm install
 
 We use [Gulp][] as our build system. Install the Gulp command-line tool globally with:
 
     npm install -g gulp
+	
+7. Navigate to the project folder and execute the command
+	
+	mvn spring-boot:run
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
+This should start the application.
+Navigate to [http://localhost:8080](http://localhost:8080) in your browser to open the application.
+You must login to the application. Username and password are "admin".
+To stop the application just terminate the execution of the previous command.
+After making changes to the code stop the application and run again 
 
-    ./mvnw
-    gulp
+	mvn spring-boot:run
 
-Bower is used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in `bower.json`. You can also run `bower update` and `bower install` to manage dependencies.
-Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
+## Excercices
 
+After you logged in to the application navigate with your browser to http://localhost:8080/#/search. You will see a form which offers a search functionality. By entering a text and pressing "Go" you will see the results in a result table below. This search functionality searches for the firstname and the lastname of a user. If the searchfield input matches exactly (case insensitive) the firstname or the lastname of the user then the user is presented in the result table. You can use the wildcard * in the searchfield combined with any text. * would mean any number of any characters. You can use * alone to see all users.
 
-## Building for production
+The following tasks award points up to a maximum of 100.
 
-To optimize the e2e client for production, run:
+### Installation (20 points)
 
-    ./mvnw -Pprod clean package
+Installation alone is an excercise. By successfully installing and starting the application you gain 20 points.
 
-This will concatenate and minify CSS and JavaScript files. It will also modify `index.html` so it references
-these new files.
+### Excercise 1 (10 points)
 
-To ensure everything worked, run:
+The code has a deliberate error. Although the search functionality should take "Lastname" into account when searching it does not. Please find and correct the bug.
 
-    java -jar target/*.war
+### Excercise 2 (10 points)
 
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+Change the search functionality to also take the users "Email" into account when searching. If the email matches the searched text then the user should be presented on the GUI.
 
-## Testing
+### Excercise 3(20 points)
 
-Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in `src/test/javascript/` and can be run with:
+Implement a new button on the GUI called "Clear". By clicking this button the entered text in the searchfield should be deleted. If the results table contains any results then they should be removed from the GUI. It is not an acceptable solution to refresh the page after clicking this button.
 
-    gulp test
+### Excercise 4 (15 points)
 
-UI end-to-end tests are powered by [Protractor][], which is built on top of WebDriverJS. They're located in `src/test/javascript/e2e`
-and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`gulp itest`) in a second one.
+After the user presses "Go" the results of the table should be presented ordered by lastname in ascending order. This should be implemented with Java and not with Javascript
 
-## Continuous Integration
+### Excercise 5 (25 points)
 
-To setup this project in Jenkins, use the following configuration:
-
-* Project name: `e2e`
-* Source Code Management
-    * Git Repository: `git@github.com:xxxx/e2e.git`
-    * Branches to build: `*/master`
-    * Additional Behaviours: `Wipe out repository & force clone`
-* Build Triggers
-    * Poll SCM / Schedule: `H/5 * * * *`
-* Build
-    * Invoke Maven / Tasks: `-Pprod clean package`
-    * Execute Shell / Command:
-        ````
-        ./mvnw spring-boot:run &
-        bootPid=$!
-        sleep 30s
-        gulp itest
-        kill $bootPid
-        ````
-* Post-build Actions
-    * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml,build/reports/e2e/*.xml`
-
-[JHipster]: https://jhipster.github.io/
-[Node.js]: https://nodejs.org/
-[Bower]: http://bower.io/
-[Gulp]: http://gulpjs.com/
-[BrowserSync]: http://www.browsersync.io/
-[Karma]: http://karma-runner.github.io/
-[Jasmine]: http://jasmine.github.io/2.0/introduction.html
-[Protractor]: https://angular.github.io/protractor/
+The user should be able to choose which of the three attributes (Firstname, Lastname, Email) should be used to order the table. By clicking on the table header "Firstname" the table should change and be presented ordered by Firstname in ascending order. The same applies for "Lastname" and "Email". If the table is ordered by Firstname and the user presses Firstname again then the table should change and be presented in descending order. The same applies for "Lastname" and "Email".

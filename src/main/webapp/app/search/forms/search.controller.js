@@ -5,22 +5,20 @@
         .module('e2EApp')
         .controller('SearchController', SearchController);
 
-    SearchController.$inject = ['$scope','$state', 'Search'];
+    SearchController.$inject = ['$scope','$state', '$http'];
 
-    function SearchController ($scope, $state, Search) {
+    function SearchController ($scope, $state, $http) {
         var vm = this;
-        console.log(this);
-
-        vm.search = {};
-
-        vm.doSearch = doSearch;
-
-        function doSearch(event) {
-            Search.query(function(data) {
-                console.log(data)
-            }, function(error) {
-                console.log(error);
-            });
-        }
+		
+        vm.doSearch = function() {
+			$http({
+				method: 'GET',
+				url: "http://localhost:8080/api/search/" + vm.search.searchTerm
+			}).then(function successCallback(response) {
+				if (response.status == 200) {
+					vm.search.users = response.data
+				}
+			});
+		};
     }
 })();

@@ -8,7 +8,7 @@
     Search.$inject = ['$resource'];
 
     function Search ($resource) {
-        var res = $resource('api/search')
+        var res = $resource('/api/search')
         return res;
     }
 })();
