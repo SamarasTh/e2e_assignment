@@ -7,10 +7,10 @@ This application was generated using JHipster, you can find documentation and he
 To install and run the application an active internet connection is required. 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
-1: JDK 1.8. Download and install any version of the JDK 1.8. It is best to install it in folder whose path does not contain spaces.
+1: JDK 1.8. Download and install any version of the JDK 1.8. It is best to install it in a folder whose path does not contain spaces.
 Make sure to also set the environmental variable JAVA_HOME in your system. The variable must point to your JDK folder (absolute path). The path of the jdk folder should also be prepended to the PATH system variable.
 
-2: Maven Version 3.x. Download and install any version of Maven 3. It is best to install it in folder whose path does not contain spaces.
+2: Maven Version 3.x. Download and install any version of Maven 3. It is best to install it in a folder whose path does not contain spaces.
 Make sure to also set the environmental variables M2_HOME and M2 in your system. The M2_HOME variable must point to the maven folder (absolute path) The M2 variable must point to the bin folder under the maven folder (absolute path). The path of the maven folder should also be prepended to the PATH system variable.
 
 3: Git (Optional) You need to install the Git commandline client to download the sources of the application.
@@ -21,7 +21,9 @@ git clone https://bitbucket.org/kperp/e2e.git
 
 Alternatively you can download the zip from
 
-https://bitbucket.org/kperp/e2e/get/b82d43df0ffb.zip
+https://bitbucket.org/kperp/e2e/get/7016ae351b13.zip
+
+In any case make sure that the folder with the application's sources is saved under a path which does not contain spaces.
 
 5: Node.js (Optional) Node.js is used to run a development web server and build the project. Depending on your system, you can install Node either from source or as a pre-packaged bundle.
 
