@@ -10,7 +10,7 @@ Nevertheless, the candidate is encouraged to contact the assessor for any questi
 
 The assessor should provide contact information to the candidate.
 
-This application was generated using JHipster. You can find documentation and help at https://jhipster.github.io.
+This application was generated using [JHipster](https://jhipster.github.io). This tool generates a handful of files in order to create a default app. A few files have been added to implement the functionality for the test. The candidate has to locate these files to complete the exercises. The exercises cover both front-end and back-end implementation tasks.
 
 ## Installation
 
