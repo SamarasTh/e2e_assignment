@@ -27,11 +27,11 @@ Make sure to also set the environmental variables M2_HOME and M2 in your system.
 
 4: Download the sources of the application. If you installed Git client in the previous step, then navigate with the command line to a folder in which you want to download the source code. Run the following command:
 
-    git clone https://bitbucket.org/kperp/e2e.git
+    git clone https://bitbucket.org/konsouv/e2e-public.git
 
 Alternatively, if you have not installed Git client in the previous step, you can download the zip from
 
-https://bitbucket.org/kperp/e2e/get/7016ae351b13.zip
+https://bitbucket.org/konsouv/e2e-public/get/2a39ada68092.zip
 
 In any case make sure that the folder with the application's sources is saved under a path which does not contain spaces.
 
