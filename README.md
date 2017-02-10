@@ -79,11 +79,11 @@ Implement a new button on the GUI called "Clear". By clicking on "Clear" the ent
 
 ### Exercise 4 (15 points)
 
-After the user presses "Go" the results of the table should be presented ordered by Lastname in ascending order. This should be implemented with Java and not with Javascript.
+After the user presses "Go" the results of the table should be presented ordered by Lastname in ascending order. The sorting should be implemented in the back-end with Java and not Javascript.
 
 ### Exercise 5 (25 points)
 
-The user should be able to choose which of the three attributes (Firstname, Lastname or Email) should be used to order the table. By clicking on the results table header "Firstname" the table should change and be presented ordered by firstname in ascending order. The same applies for "Lastname" and "Email". If the table is ordered by firstname and the user presses on the results table header "Firstname" again then the table should change and be presented in descending order. The same applies for "Lastname" and "Email".
+The user should be able to choose which of the three attributes (Firstname, Lastname or Email) should be used to order the table. By clicking on the results table header "Firstname" the table should change and be presented ordered by firstname in ascending order. The same applies for "Lastname" and "Email". If the table is ordered by firstname and the user presses on the results table header "Firstname" again then the table should change and be presented in descending order. The same applies for "Lastname" and "Email". The sorting should be implemented in the back-end with Java and not Javascript.
 
 ## Delivery
 
