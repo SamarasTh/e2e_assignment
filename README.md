@@ -31,7 +31,7 @@ Make sure to also set the environmental variables M2_HOME and M2 in your system.
 
 Alternatively, if you have not installed Git client in the previous step, you can download the zip from
 
-    https://bitbucket.org/konsouv/e2e-public/get/2a39ada68092.zip
+    https://bitbucket.org/konsouv/e2e-public/get/7b674777d9c1.zip
 
 In any case make sure that the folder with the application's sources is saved under a path which does not contain spaces.
 
