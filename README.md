@@ -31,7 +31,7 @@ Make sure to also set the environmental variables M2_HOME and M2 in your system.
 
 Alternatively, if you have not installed Git client in the previous step, you can download the zip from
 
-https://bitbucket.org/konsouv/e2e-public/get/2a39ada68092.zip
+    https://bitbucket.org/konsouv/e2e-public/get/2a39ada68092.zip
 
 In any case make sure that the folder with the application's sources is saved under a path which does not contain spaces.
 
@@ -65,15 +65,15 @@ The following tasks award points up to a maximum of 100.
 
 Installation alone is an exercise. By successfully installing and starting the application you gain 20 points.
 
-### Exercise 1 (10 points)
+### Exercise 1 (5 points)
 
 The code has a deliberate error. Although the search functionality should take the user's lastname into account when searching it does not. Correct the bug.
 
-### Exercise 2 (10 points)
+### Exercise 2 (15 points)
 
 Change the search functionality to also take the user's email into account when searching. If the email matches the searched text then the user should be presented on the results table.
 
-### Exercise 3 (20 points)
+### Exercise 3 (15 points)
 
 Implement a new button on the GUI called "Clear". By clicking on "Clear" the entered text in the searchfield should be deleted. If the results table contains any results then they should be removed from the GUI. It is not an acceptable solution to refresh the page after clicking "Clear".
 
@@ -81,7 +81,7 @@ Implement a new button on the GUI called "Clear". By clicking on "Clear" the ent
 
 After the user presses "Go" the results of the table should be presented ordered by Lastname in ascending order. The sorting should be implemented in the back-end with Java and not Javascript.
 
-### Exercise 5 (25 points)
+### Exercise 5 (30 points)
 
 The user should be able to choose which of the three attributes (Firstname, Lastname or Email) should be used to order the table. By clicking on the results table header "Firstname" the table should change and be presented ordered by firstname in ascending order. The same applies for "Lastname" and "Email". If the table is ordered by firstname and the user presses on the results table header "Firstname" again then the table should change and be presented in descending order. The same applies for "Lastname" and "Email". The sorting should be implemented in the back-end with Java and not Javascript.
 
