@@ -1,18 +1,14 @@
 package io.kpax.e2e.es.web.rest;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import io.kpax.e2e.es.service.dto.UserDTO;
 
@@ -38,23 +34,54 @@ public class SearchResource {
 	}
 
 	@RequestMapping(value = "/search/{query}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<UserDTO>> search(@PathVariable("query") String query) {
-		List<UserDTO> results = new ArrayList<>();
+	public ResponseEntity<List<UserDTO>> search(@PathVariable("query") String query, @RequestParam("column") String column, @RequestParam("order") String order)  {
+        List<UserDTO> results = new ArrayList<>();
 
-		if (query != null && !query.trim().isEmpty()) {
-			for (UserDTO user : USERS) {
-				String regExp = "^" + query.trim().replace("*", ".*") + "$";
+        if (query != null && !query.trim().isEmpty()) {
+            for (UserDTO user : USERS) {
+                String regExp =  query.trim().replace("*", ".*") ;
 
-				Pattern pattern = Pattern.compile(regExp, Pattern.CASE_INSENSITIVE);
-				Matcher firstnameMatcher = pattern.matcher(user.getFirstName());
-				Matcher lastnameMatcher = pattern.matcher(user.getFirstName());
+                Pattern pattern = Pattern.compile(regExp, Pattern.CASE_INSENSITIVE);
+                Matcher firstnameMatcher = pattern.matcher(user.getFirstName());
+//                exercise 1
+                Matcher lastnameMatcher = pattern.matcher(user.getLastName());
+//                exercise 2
+                Matcher emailMatcher = pattern.matcher(user.getEmail());
 
-				if (firstnameMatcher.matches() || lastnameMatcher.matches()) {
+                if (firstnameMatcher.matches() || lastnameMatcher.matches() || emailMatcher.find() )   {
 					results.add(user);
-				}
-			}
-		}
+                    }
+            }
+        }
 
-		return new ResponseEntity<>(results, HttpStatus.OK);
-	}
+
+//        exercise 5
+        switch (column){
+            case "firstName" :
+                if (order.equals("DESC")){
+                    results.sort(Comparator.comparing(UserDTO::getFirstName).reversed());
+                }else{
+                    results.sort(Comparator.comparing(UserDTO::getFirstName));
+                }
+                break;
+            case "lastName" :
+                if (order.equals("DESC")){
+                    results.sort(Comparator.comparing(UserDTO::getLastName).reversed());
+                }else{
+                    results.sort(Comparator.comparing(UserDTO::getLastName));
+                }
+                break;
+            case "email" :
+                if (order.equals("DESC")){
+                    results.sort(Comparator.comparing(UserDTO::getEmail).reversed());
+                }else{
+                    results.sort(Comparator.comparing(UserDTO::getEmail));
+                }
+                break;
+            default :
+                //        exercise 4
+                results.sort(Comparator.comparing(UserDTO::getLastName));
+        }
+            return new ResponseEntity<>(results, HttpStatus.OK);
+        }
 }

@@ -11,18 +11,18 @@
     <div class="row">
         <div class="col-md-4">
             <button id="go" type="button" class="btn btn-default" data-ng-click="vm.doSearch(vm.search.searchTerm)">Go</button>
+            <button id="clear" type="button" class="btn btn-default" data-ng-click="vm.clearTableAndSearch()">Clear</button>
         </div>
     </div>
-	
 	<br/>
-	
+
 	<div class="row">
 		<b>Results</b>
-		<table class="table">
+		<table class="table"  >
 			<tr>
-				<td><b>Firstname</b></td>
-				<td><b>Lastname</b></td>
-				<td><b>Email</b></td>
+				<td ><button type="button" data-ng-click="vm.orderBy('firstName')">Firstname</button></td>
+				<td ><button type="button" data-ng-click="vm.orderBy('lastName')">Lastname</button></td>
+				<td ><button type="button" data-ng-click="vm.orderBy('email')">Email</button></td>
 			</tr>
 			<tr ng-repeat="user in vm.search.users">
 				<td>{{ user.firstName }}</td>
@@ -30,5 +30,6 @@
 				<td>{{ user.email }}</td>
 			</tr>
 		</table>
+
 	</div>
 </div>
